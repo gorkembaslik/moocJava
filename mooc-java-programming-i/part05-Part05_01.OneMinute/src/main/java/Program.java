@@ -12,7 +12,7 @@ public class Program {
             timer.advance();
             
             try {
-                Thread.sleep(10);
+                Thread.sleep(10); // important
             } catch (Exception e) {
                 
             }
