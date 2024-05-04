@@ -10,6 +10,30 @@ public class SimpleDate {
         this.month = month;
         this.year = year;
     }
+    
+    public void advance(){
+        this.day++;
+        if (this.day>30){
+            this.day=1;
+            this.month++;
+            if (this.month>12){
+                this.month = 1;
+                this.year++;
+            }
+        }
+    }
+    public void advance(int howManyDays){
+        int i = 0;
+        while (i < howManyDays){
+            advance();
+            i++;
+        }
+    }
+    public SimpleDate afterNumberOfDays(int days){
+        SimpleDate n = new SimpleDate(this.day, this.month, this.year);
+        n.advance(days);
+        return n;
+    }
 
     @Override
     public String toString() {
